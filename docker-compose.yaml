@@ -13,10 +13,14 @@ services:
     command: ["sh", "/opt/spark/start_services.sh"]
     ports:
       - "4040:4040"   # Spark Master Web UI port
+      - "4041:4041"   # Spark Master Web UI port
+      - "4042:4042"   # Spark Master Web UI port
       - "7077:8080"   # Spark Master port
       - "8888:8888"   # Jupyter 
     volumes:
       - ./data:/data
+      - ./config/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
+      - ./config/start_services.sh:/opt/spark/start_services.sh
       - spark-logs:/opt/spark/logs
     networks:
       - spark-network

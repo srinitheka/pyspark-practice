@@ -11,3 +11,9 @@ docker-compose up -d
 ```
 
 This command will start all the Docker containers defined in your `docker-compose.yml` file. If the containers fail to start, an error message will be displayed.
+
+## 1. Jupyter URL
+
+```bash
+http://127.0.0.1:8888/tree
+```
