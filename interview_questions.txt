@@ -1,0 +1,161 @@
+𝑫𝒂𝒕𝒂 𝑬𝒏𝒈𝒊𝒏𝒆𝒆𝒓𝒊𝒏𝒈:
+
+PySpark:
+1. Spark Architecture 
+ - Spark components (Driver, Executor, Cluster Manager)
+ - Spark's execution model (RDDs, DAG, Jobs, Stages, Tasks)
+ - Understanding of lazy evaluation
+
+2. Resilient Distributed Datasets (RDDs)
+ - Creation of RDDs (from collections, external datasets)
+ - Transformations (map, filter, flatMap, union, etc.)
+ - Actions (collect, count, saveAsTextFile, etc.)
+ - Persistence and caching
+ - Partitioning and shuffling
+
+3. DataFrames and Datasets
+ - Differences between RDDs, DataFrames, and Datasets
+ - Working with DataFrames (creation, transformations)
+ - DataFrame API (select, filter, join, groupBy, etc.)
+ - Catalyst optimizer and Tungsten execution engine
+ - User-defined functions (UDFs) and User-defined aggregations (UDAFs)
+
+4. Spark SQL
+ - Spark SQL architecture
+ - Query execution and optimization
+ - Working with Hive tables
+ - Integration with JDBC sources
+ - Window functions
+
+5. Spark Streaming
+ - Micro-batch processing model
+ - DStreams vs. Structured Streaming
+ - Stateful and stateless transformations
+ - Window operations
+ - Integration with Kafka, Flume, HDFS, etc.
+ - Handling late data and watermarking
+
+6. Performance Optimization
+ - Data serialization formats (Parquet, ORC, Avro)
+ - Partitioning and bucketing
+ - Skewed data handling
+ - Broadcast joins and handling large datasets
+ - Memory management and garbage collection
+
+7. Cluster Management
+ - Spark with YARN, Mesos, and Kubernetes
+ - Spark Standalone mode
+ - Configuring and tuning Spark applications
+ - Understanding and configuring Spark submit options
+ - Monitoring and troubleshooting Spark applications
+
+8. Advanced Topics
+ - Spark with machine learning (MLlib)
+ - Graph processing with GraphX
+ - Advanced SQL queries and optimizations
+ - Understanding of Delta Lake and its use with Spark
+ - Streaming aggregations and joins in Structured Streaming
+
+9. Integration and Ecosystem
+ - Integrating Spark with Kafka, Cassandra, HBase, etc.
+ - Working with cloud services (AWS S3, Azure Data Lake, etc.)
+ - Using Spark in combination with tools like Airflow or NiFi
+ - Understanding of Lakehouse architecture with Spark
+
+10. Case Studies and Practical Applications
+ - Real-world use cases of Spark in data engineering
+ - Best practices in Spark job design and optimization
+ - Understanding of end-to-end ETL pipelines with Spark
+ 
+How do you decide on cluster configuration if you have 100 GB of data?
+What happens once you submit the code, and how does Spark work internally?
+What is driver memory, and when does it spill to disk?
+How does the memory manager work?
+When do you get an OOM (Out Of Memory) exception in the driver node and executor node?
+What is executor memory, how is it distributed, and when does it spill to disk?
+How many types of join strategies are there in Spark?
+When using Shuffle Sort Merge Join, does the shuffling occur on the driver node or the executor node?
+What optimization techniques have you used in Spark?
+What is a DAG in Spark, and what is its purpose?
+If data can be spilled to disk, why do we encounter OOM (Out Of Memory) errors?
+How does Spark work internally?
+What are the different phases of the SQL Engine?
+Why do we get an Analysis Exception error?
+Explain in detail the different types of transformations in Spark.
+ How many partitions are created when we invoke a wide dependency transformation?
+If we have two large datasets (approximately 100 GB each) and encounter an Out Of Memory (OOM) exception while performing a join on both, how can we optimize this scenario?
+What is the difference between `head()` and `take()`?
+How can array columns be converted to a list of columns in Spark?
+What is partition pruning, and what are common errors associated with it?
+How does Adaptive Query Execution (AQE) work in Spark?
+How does Spark manage storage inside an executor internally?
+What is the difference between `cache()` and `persist()`? Which one follows lazy evaluation?
+What is bucket pruning?
+What is salting in Spark, and why is it needed?
+What are Application, Job, Stage, and Task in Spark, and how are they related? (Explain with an example.)
+Why do we get an OutOfMemory (OOM) exception when calling `collect()`, but not when calling `take()`?
+What is an Accumulator variable in Spark and how does it differ from a Broadcast variable?
+How can we get the row count of each partition in Spark?
+What are the different performance tuning techniques in Spark?
+What is a serializer in Spark and how does it work?
+What is an RDD in Spark? What are its advantages and disadvantages, and when should we use RDDs?
+What are the different read and write modes in Spark? How can we insert corrupted records into a new tabl
+How would you handle a situation where your data is highly skewed, causing certain partitions to be much larger than others?
+Describe the best practices to optimize join operations in Spark.
+Explain the difference between DataFrame and Dataset. When would you use one over the other?
+How would you handle the small file problem when reading data from HDFS or S3?
+Describe your approach to troubleshoot and resolve a job failure due to executor memory issues.
+How would you determine the optimal cluster size for a given Spark job?
+What techniques would you use to efficiently process and analyze very large datasets in Spark?
+If you encounter an Out Of Memory (OOM) exception when joining two large datasets, what steps would you take to resolve this issue?
+Given the following transformations, identify how many jobs, stages, and tasks will be created:
+ - Read data from a CSV source
+ - Repartition into 2
+ - Filter
+ - Select
+ - GroupBy
+ - Collect()
+Have you worked on Spark optimization in your current project? Explain the issue you faced and how you resolved it.
+What are the benefits of using Delta tables?
+What file formats have you worked with, and why is the Parquet format preferable to other file formats?
+What is the Catalyst optimizer, and explain its phases?
+Explain memory management in Spark?
+When we cache data in Spark, where is it stored? In Spark memory or user memory?
+What do you understand by driver node and worker node, and how are their responsibilities divided?
+Have you ever worked with JSON data? How do you flatten nested JSON data?
+How do you handle corrupted data while reading from a source? Provide a code example where you read data from a CSV file and store the corrupted records.
+What methods are you using in your project for incremental load?
+What is your approach to reprocessing data in case of a failure?
+What are some of the lesser-known disadvantages of using Spark?
+Can you explain the concept of the JVM and Python wrapper in Spark?
+Why is it generally advised against using user-defined functions and data structures in Spark?
+What are the drawbacks of using user-defined functions in Spark?
+Could you explain the concept of Resilient Distributed Datasets (RDD) in PySpark?
+What are actions and transformations in PySpark, and how do they differ?
+How do you manage and handle null values in PySpark DataFrames?
+What is a partition in PySpark, and how do you control partitioning for better performance?
+Can you explain the difference between narrow and wide transformations in PySpark?
+How does PySpark infer schemas, and what are the implications of this?
+What role does SparkContext play in a PySpark application?
+How do you perform aggregations in PySpark, and what are the key considerations?
+What strategies do you use for caching data in PySpark to improve performance
+Explain how PySpark handles schema validation.
+How can you broadcast variables in PySpark?
+What are the different ways to run Spark jobs on a cluster?
+Describe PySpark UDFs and their use cases.
+How do you optimize a PySpark job?
+Explain the concept of lineage in PySpark.
+What are accumulators, and how do you use them?
+How do you manage memory in PySpark?
+What is the significance of the DAG (Directed Acyclic Graph) in Spark?
+Explain how to perform data partitioning in PySpark.
+How do you handle skewed data in PySpark?
+What is a PySpark RDD, and how does it differ from DataFrames?
+Describe the PySpark Catalyst Optimizer.
+How do you perform joins in PySpark, and what types are available?
+What is the role of the SparkContext in PySpark?
+How do you handle missing or null values in PySpark?
+Explain the PySpark `groupBy` and `aggregate` operations.
+What is the difference between the `map` and `flatMap` transformations in PySpark?
+How can you persist and cache data in PySpark?
+Discuss the importance of checkpointing in PySpark.
